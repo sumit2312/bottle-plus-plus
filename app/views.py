@@ -8,11 +8,14 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib.auth.models import User,auth
 from django.contrib import messages
 # Create your views here.
+from django.views import generic
 
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect
 from django.template import loader
 from django.http import HttpResponse
+
+
 
 @login_required(login_url="/login/")
 def index(request):
@@ -38,4 +41,17 @@ def pages(request):
 def get_patients_list(request):
     patients = Patients.objects.all()
     return render(request, "pages/get_patients_list.html",{"patients":patients})
+
+
+    
+@login_required(login_url="/login/")
+def get_patient_info(request, pk):
+    patient_info = get_object_or_404(Patients,pk=pk)
+    return render(request, "pages/get_patient_details.html",{"patient_info":patient_info})
+
+@login_required(login_url="/login/")
+def notifications(request):
+    patients = Patients.objects.all()
+    return render(request, "pages/notifications.html",{"patients":patients})
+
 

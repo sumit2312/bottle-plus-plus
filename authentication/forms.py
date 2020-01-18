@@ -1,8 +1,5 @@
 # -*- encoding: utf-8 -*-
-"""
-License: MIT
-Copyright (c) 2019 - present AppSeed.us
-"""
+
 
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
@@ -39,6 +36,14 @@ class SignUpForm(UserCreationForm):
                 "class": "form-control"
             }
         ))
+    first_name = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                "placeholder" : "Phone",                
+                "class": "form-control"
+            }
+        )
+    )
     password1 = forms.CharField(
         widget=forms.PasswordInput(
             attrs={
@@ -56,4 +61,4 @@ class SignUpForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ('username', 'email', 'password1', 'password2')
+        fields = ('username', 'email','first_name', 'password1', 'password2')

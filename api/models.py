@@ -20,6 +20,8 @@ class Patients(models.Model):
     def __str__(self):
         return self.name
 
+    
+
 class BottleStats(models.Model):
     bottle_primary_key = models.IntegerField()
     level = models.IntegerField()

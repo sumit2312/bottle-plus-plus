@@ -1,0 +1,53 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Patients List {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<br/>
+<br/>
+<blockquote>
+<div class="typography-line">
+          <span>Name</span>
+          <p class="text-primary">
+            {{patient_info.name}}</p>
+        </div>
+        <div class="typography-line">
+          <span>Age</span>
+          <p class="text-info">
+            {{patient_info.age}}</p>
+        </div>
+        <div class="typography-line">
+          <span>Disease</span>
+          <p class="text-success">
+            {{patient_info.disease}} </p>
+        </div>
+        <div class="typography-line">
+          <span>Bottle Level</span>
+          <p class="text-warning">
+            {{patient_info.bottle.level}}
+          </p>
+        </div>
+        <div class="typography-line">
+          <span>Bottle ID</span>
+          <p class="text-danger">
+            {{patient_info.bottle.id}}</p>
+        </div>
+        <div class="typography-line">
+          <span>Bottle Status</span>
+          <p class="text-danger">
+          {% if patient_info.bottle.status %}
+            ON
+            {% else %}         
+            OFF</p>
+            {% endif %}
+        </div>
+</blockquote>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

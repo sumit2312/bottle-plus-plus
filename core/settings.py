@@ -28,8 +28,14 @@ INSTALLED_APPS = [
     'api',
     'accounts_api',
     'rest_framework',
-    'rest_framework.authtoken'
+    'rest_framework.authtoken',
+    'phonenumber_field',
 ]
+
+TWILIO_ACCOUNT_SID = 'ACefd48fac41e65aa0043caa6f817a35bb'
+TWILIO_AUTH_TOKEN = '6db902ebaaacf96fc87de25a5aa500f3'
+DJANGO_TWILIO_FORGERY_PROTECTION = False
+DJANGO_TWILIO_BLACKLIST_CHECK = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

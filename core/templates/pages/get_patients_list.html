@@ -42,7 +42,7 @@
                   {{patient.pk}}
                 </td>
                 <td>
-                  {{patient.name}}
+                  <a href="{% url "get_patient_info" pk=patient.pk %}">{{patient.name}}</a>
                 </td>
                 <td>
                   {{patient.room_number}}
